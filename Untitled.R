@@ -23,25 +23,26 @@ std(v) - sd(v)
 
 mean(v)==mea(v)
 
-confint(v)
 
 confintmean <- function(v,level){
-        measamp <- NA
+        msamp <- NA
         for (i in 1:1000) {
                 samp <- sample(v,round(length(v)/1000))
                 msamp[i] <- mea(samp) 
         }
         somsamp <- sort(msamp)
         mmean <- mea(msamp)
-        mmin <- min(mmean)  
-        mmax <- max(mmean)  
+        mmin <- min(msamp)  
+        mmax <- max(msamp)  
 
-        i_mmean <- sum(somsamp<mmean) 
+        i_mmean <- sum(somsamp<mmean) # place of mmean in the ordered list of elements
+        ci_upp <- somsamp[(i_mmean+level*1000/2)]
+        ci_low <- somsamp[(i_mmean-level*1000/2)]
+        CI <- c(ci_upp, ci_low)
         
-        
-        return()
-        
+        return(CI)
         
 }
 
+confintmean(v,0.999)
 
