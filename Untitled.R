@@ -27,13 +27,17 @@ confint(v)
 
 confintmean <- function(v,level){
         measamp <- NA
-        for (i in 1:100) {
-                samp <- sample(v,round(length(v)/100))
-                measamp[i] <- mea(samp) 
+        for (i in 1:1000) {
+                samp <- sample(v,round(length(v)/1000))
+                msamp[i] <- mea(samp) 
         }
+        smsamp <- sort(msamp)
+        mmean <- mea(msamp)
+        mmin <- min(mmean)  
+        mmax <- max(mmean)  
+
         
-        
-        return(measamp)
+        return()
         
         
 }
