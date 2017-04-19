@@ -1,7 +1,6 @@
 set.seed(123)
 library(dplyr)
 
-v <- runif(8999, 0.0, 1.0)
 # expects one-dimensional numeric object.  Ignores NAs
 mea <- function(x){
         if (length(x)[1]==0){
@@ -52,6 +51,7 @@ confintmean <- function(v,level){
 
 ####################
 
+v <- runif(8999, 0.0, 1.0)
 confintmean(v,0.10)
 
 
