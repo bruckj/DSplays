@@ -54,8 +54,11 @@ confintmean <- function(v,level){
 
 confintmean(v,0.10)
 
-# left to do:
-# - correct std() to more exactly reproduce sd()
+
+# I interpreted the text as Confidence Intervall for the mean (perhaps you meant to have it for the standard deviation as well, but I did not have enough time)
+
+# Left to do in case this function was to be used:
+# - correct std() to more exactly reproduce standard sd(), unless this formula is deemed better for the purpuse.
 # - research to chose the sampling parameter here set to 1000 ideally, treating vectors shorter than 1000.
 # - more conceptual treatment of the case when (i_mmean+level*1000/2) or i_mmean-level*1000/2) out of index range (currently restarting the whole process)
 
