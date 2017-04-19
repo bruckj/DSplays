@@ -31,11 +31,13 @@ confintmean <- function(v,level){
                 samp <- sample(v,round(length(v)/1000))
                 msamp[i] <- mea(samp) 
         }
-        smsamp <- sort(msamp)
+        somsamp <- sort(msamp)
         mmean <- mea(msamp)
         mmin <- min(mmean)  
         mmax <- max(mmean)  
 
+        i_mmean <- sum(somsamp<mmean) 
+        
         
         return()
         
